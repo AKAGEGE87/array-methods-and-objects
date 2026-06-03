@@ -44,3 +44,23 @@ const totalValue = inventory.reduce((total, item) => {
 }, 0)
 
 console.log(totalValue)
+
+const items = [
+  { name: "Wooden Stick", rarity: "common" },
+  { name: "Dragon Blade", rarity: "legendary" },
+  { name: "Silver Bow", rarity: "rare" },
+  { name: "Old Boots", rarity: "common" },
+  { name: "Phoenix Ring", rarity: "legendary" }
+];
+
+const names = items.filter((item) => {
+  const { rarity } = item;
+  if (rarity === "rare" || rarity === "legendary") {
+    return true;
+  }
+  return false;
+}).map((item) => {
+  return item.name
+})
+
+console.log(names)
